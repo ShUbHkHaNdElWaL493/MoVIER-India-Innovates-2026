@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "b79a5bb5ceb0185b9b6a3976",
+    "documentMicroversion": "33a4e4db75badec5ffe1d9c2",
+    "documentVersion": "4d1d6a58bbbae0fd8951814a",
+    "elementId": "79510d6756203c5ca6d56c9b",
+    "fullConfiguration": "default",
+    "id": "M0PkOMCBqMZyTQeVy",
+    "isStandardContent": false,
+    "name": "Intel Realsense RPLIDAR A2.f3d  <1>",
+    "partId": "JFD",
+    "suppressed": false,
+    "type": "Part"
+}

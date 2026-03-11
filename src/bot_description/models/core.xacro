@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:include filename="$(find bot_description)/models/include/camera.xacro"/>
+  <xacro:include filename="$(find bot_description)/models/include/caster.xacro"/>
+  <xacro:include filename="$(find bot_description)/models/include/chassis.xacro"/>
+  <xacro:include filename="$(find bot_description)/models/include/imu.xacro"/>
+  <xacro:include filename="$(find bot_description)/models/include/lidar.xacro"/>
+  <xacro:include filename="$(find bot_description)/models/include/wheel.xacro"/>
+
+  <xacro:macro name="robot_description">
+    
+    <xacro:chassis_description name="base_link" mass="10"/>
+
+    <xacro:lidar_description name="top_lidar" parent="base_link">
+      <gz_frame_id>top_lidar</gz_frame_id>
+      <origin xyz="0 0 0.075" rpy="0 0 0"/>
+    </xacro:lidar_description>
+
+    <xacro:camera_description name="top_camera" parent="base_link">
+      <gz_frame_id>top_camera</gz_frame_id>
+      <origin xyz="0 0 0.115" rpy="0 0 0"/>
+    </xacro:camera_description>
+
+    <xacro:imu_description name="base_imu" parent="base_link">
+      <origin xyz="0 0 -0.055" rpy="0 0 0"/>
+    </xacro:imu_description>
+
+    <xacro:wheel_description name="left_wheel" parent="base_link" mass="1">
+      <origin xyz="0 0.15 -0.05" rpy="-1.571 0 0"/>
+      <axis xyz="0 0 1"/>
+    </xacro:wheel_description>
+
+    <xacro:wheel_description name="right_wheel" parent="base_link" mass="1">
+      <origin xyz="0 -0.15 -0.05" rpy="1.571 0 0"/>
+      <axis xyz="0 0 -1"/>
+    </xacro:wheel_description>
+
+    <xacro:caster_description name="front_caster" parent="base_link" mass="1">
+      <origin xyz="0.15 0 -0.05"/>
+    </xacro:caster_description>
+
+    <xacro:caster_description name="rear_caster" parent="base_link" mass="1">
+      <origin xyz="-0.15 0 -0.05"/>
+    </xacro:caster_description>
+
+  </xacro:macro>
+
+</robot>

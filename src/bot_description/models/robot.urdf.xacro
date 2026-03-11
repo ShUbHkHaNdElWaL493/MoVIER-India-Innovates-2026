@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="robot">
+
+  <xacro:include filename="$(find bot_description)/models/core.xacro"/>
+  <xacro:robot_description/>
+
+</robot>

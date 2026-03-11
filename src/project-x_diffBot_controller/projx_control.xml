@@ -1,0 +1,8 @@
+<library path="project-x_diffbot_controller"> <class name="projx_control/ProjXDriveHW" 
+         type="projx_control::ProjXDriveHW" 
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      The ProjX DiffBot Hardware Interface.
+    </description>
+  </class>
+</library>

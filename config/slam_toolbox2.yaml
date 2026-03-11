@@ -1,0 +1,40 @@
+slam_toolbox:
+  ros__parameters:
+    # 1. Base Settings
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_link
+    scan_topic: /scan
+    
+    # Set to 'true' if playing your bag file, 'false' if running live on the Jetson!
+    use_sim_time: true
+    
+    # 2. Map Properties
+    mode: localization
+    map_file_name: /home/orinmars/ayush_ws/my_room_map
+    map_start_pose: [0.0, 0.0, 0.0]  # [x, y, yaw] Tells it where the robot is starting!
+    resolution: 0.05
+    max_laser_range: 8.0 # Tuned for your YDLIDAR G2
+    minimum_time_interval: 0.5
+    transform_timeout: 0.2
+    tf_buffer_duration: 1.0
+    stack_size_to_use: 40000000 # Memory optimization for Jetson
+
+    # 3. Scan Matching & Odometry Trust
+    # These dictate how much the LiDAR corrects the EKF. 
+    # Because your EKF is good, we keep the search windows tight.
+    use_scan_matching: true
+    use_scan_barycenter: true
+    minimum_travel_distance: 0.2
+    minimum_travel_heading: 0.2
+    scan_buffer_size: 10
+    scan_buffer_maximum_scan_distance: 10.0
+    link_match_minimum_response_fine: 0.1  
+    link_scan_maximum_distance: 1.5
+
+    # 4. Loop Closure
+    do_loop_closing: true 
+    loop_match_minimum_chain_size: 10
+    loop_match_maximum_variance_coarse: 3.0
+    loop_match_minimum_response_coarse: 0.35
+    loop_match_minimum_response_fine: 0.45

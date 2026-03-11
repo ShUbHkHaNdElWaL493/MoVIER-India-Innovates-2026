@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="wheel_description" params="name parent mass *origin *axis">
+
+    <link name="${name}">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <!-- <mesh filename="file://$(find bot_description)/models/meshes/wheel.stl"/> -->
+          <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+        <material name="black">
+          <color rgba="0.2 0.2 0.2 1"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <!-- <mesh filename="file://$(find bot_description)/models/meshes/wheel.stl"/> -->
+          <cylinder radius="0.05" length="0.025"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="${mass}"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia
+          ixx="${0.25 * mass * 0.05 * 0.05}"
+          ixy="0.0"
+          ixz="0.0"
+          iyy="${0.25 * mass * 0.05 * 0.05}"
+          iyz="0.0"
+          izz="${0.5 * mass * 0.05 * 0.05}"
+        />
+      </inertial>
+    </link>
+
+    <gazebo reference="${name}">
+	    <selfCollide>false</selfCollide>
+      <mu1 value="0.2"/>
+      <mu2 value="0.2"/>
+    </gazebo>
+
+    <joint name="${name}_joint" type="continuous">
+      <parent link="${parent}"/>
+      <child link="${name}"/>
+      <xacro:insert_block name="origin"/>
+      <xacro:insert_block name="axis"/>
+      <limit effort="10" velocity="10"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>

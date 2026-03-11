@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="robot">
+
+  <xacro:include filename="$(find bot_description)/models/core.xacro"/>
+  <xacro:include filename="$(find bot_control)/models/ros2_control.xacro"/>
+
+  <!-- parameters -->
+
+  <!-- possible 'mode' values: gz, hw -->
+  <!-- hardware to be added later -->
+  <xacro:arg name="mode" default="gz"/>
+
+  <xacro:robot_description/>
+  <xacro:robot_ros2_control_description mode="$(arg mode)"/>
+
+</robot>

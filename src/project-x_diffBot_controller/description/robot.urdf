@@ -1,0 +1,772 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/75f03a87cded77a10e584363/w/2d1bdbe409b8eecf1d80a379/e/6372d82bd070b4eb48286e0e -->
+<robot name="bot">
+  <link name="base_link"/>
+  <joint name="base_link_to_part_a" type="fixed">
+    <parent link="base_link"/>
+    <child link="part_a"/>
+  </joint>
+  <!-- LIDAR -->
+  <link name="laser_frame"/>
+  <joint name="base_to_lidar" type="fixed">
+    <parent link="base_link"/>
+    <child link="laser_frame"/>
+    <origin xyz="0.075 0.0 0.240" rpy="0 0.0 1.047"/>
+    <!-- <origin xyz="0.075 0.0 0.240" rpy="0.0 0.0 1.047"/> -->
+  </joint>
+ 
+  <!-- IMU -->
+  <link name="imu_link"/>
+  <joint name="base_to_imu" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0.08265 0.0 0.08613" rpy="0. 0. 3.014"/>
+    <!-- <origin xyz="0.0 0.0 0.0" rpy="0. 0. 0."/> -->
+  </joint>
+
+  <!-- Link part_a -->
+  <link name="part_a">
+    <inertial>
+      <origin xyz="-0.000954094 0.008709 0.246425" rpy="0 0 0"/>
+      <mass value="42.4242"/>
+      <inertia ixx="2.98322" ixy="-0.000306989" ixz="0.00627267" iyy="2.70093" iyz="-0.135065" izz="1.20408"/>
+    </inertial>
+    <!-- Part intel_realsense_rplidar_a2_f3d -->
+    <visual>
+      <origin xyz="-3.11002e-17 -0.00179592 0.1478" rpy="1.5708 -1.10556e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/intel_realsense_rplidar_a2_f3d.stl"/>
+      </geometry>
+      <material name="intel_realsense_rplidar_a2_f3d_material">
+        <color rgba="0.298039 0.298039 0.298039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-3.11002e-17 -0.00179592 0.1478" rpy="1.5708 -1.10556e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/intel_realsense_rplidar_a2_f3d.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_f -->
+    <visual>
+      <origin xyz="-0.0015 7.63709e-16 0.211" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_f.stl"/>
+      </geometry>
+      <material name="part_f_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0015 7.63709e-16 0.211" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_f.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_d -->
+    <visual>
+      <origin xyz="-7.79717e-17 1.02392e-16 0.01" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_d.stl"/>
+      </geometry>
+      <material name="part_d_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-7.79717e-17 1.02392e-16 0.01" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_d.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part food_plate -->
+    <visual>
+      <origin xyz="-0.00194148 -0.000206762 0.4305" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/food_plate.stl"/>
+      </geometry>
+      <material name="food_plate_material">
+        <color rgba="0.741176 0.529412 0.462745 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00194148 -0.000206762 0.4305" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/food_plate.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_h -->
+    <visual>
+      <origin xyz="-0.00193934 0.00043934 0.3685" rpy="3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_h.stl"/>
+      </geometry>
+      <material name="part_h_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00193934 0.00043934 0.3685" rpy="3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_h.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part extrusion -->
+    <visual>
+      <origin xyz="0.105 0.104379 0.21" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/extrusion.stl"/>
+      </geometry>
+      <material name="extrusion_material">
+        <color rgba="0.447059 0.243137 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.105 0.104379 0.21" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/extrusion.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_a -->
+    <visual>
+      <origin xyz="-3.22184e-17 2.17953e-18 0" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_a.stl"/>
+      </geometry>
+      <material name="part_a_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-3.22184e-17 2.17953e-18 0" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_a.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part ks_10x15 -->
+    <visual>
+      <origin xyz="0.00325 0.1936 0.0745" rpy="-1.5708 -3.03858e-64 2.22045e-16"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/ks_10x15.stl"/>
+      </geometry>
+      <material name="ks_10x15_material">
+        <color rgba="0.345098 0.345098 0.345098 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00325 0.1936 0.0745" rpy="-1.5708 -3.03858e-64 2.22045e-16"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/ks_10x15.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_g -->
+    <visual>
+      <origin xyz="-0.0015 1.37935e-16 0.211" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_g.stl"/>
+      </geometry>
+      <material name="part_g_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0015 1.37935e-16 0.211" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_g.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_y -->
+    <visual>
+      <origin xyz="-0.127316 1.69469e-17 0.026" rpy="3.14159 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_y.stl"/>
+      </geometry>
+      <material name="part_y_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.127316 1.69469e-17 0.026" rpy="3.14159 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_y.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_b -->
+    <visual>
+      <origin xyz="-9.07029e-18 -1.73472e-17 0.01" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_b.stl"/>
+      </geometry>
+      <material name="part_b_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-9.07029e-18 -1.73472e-17 0.01" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_b.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part extrusion_2 -->
+    <visual>
+      <origin xyz="0.105 -0.104379 0.21" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/extrusion.stl"/>
+      </geometry>
+      <material name="extrusion_2_material">
+        <color rgba="0.447059 0.243137 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.105 -0.104379 0.21" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/extrusion.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part side_two -->
+    <visual>
+      <origin xyz="-0.0015 -0.2085 0.519" rpy="3.68517e-16 3.21677e-15 1.5708"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/side_two.stl"/>
+      </geometry>
+      <material name="side_two_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0015 -0.2085 0.519" rpy="3.68517e-16 3.21677e-15 1.5708"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/side_two.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_x -->
+    <visual>
+      <origin xyz="-0.127316 1.1817e-16 0.026" rpy="3.14159 6.0723e-17 -1.5708"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_x.stl"/>
+      </geometry>
+      <material name="part_x_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.127316 1.1817e-16 0.026" rpy="3.14159 6.0723e-17 -1.5708"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_x.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part shutdownbutton_step_1_outside_yw1b_v4_body_step_1_solid1 -->
+    <visual>
+      <origin xyz="0.05 0.211 0.0685" rpy="-1.5708 -3.03858e-64 2.22045e-16"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/shutdownbutton_step_1_outside_yw1b_v4_body_step_1_solid1.stl"/>
+      </geometry>
+      <material name="shutdownbutton_step_1_outside_yw1b_v4_body_step_1_solid1_material">
+        <color rgba="0.796078 0.823529 0.937255 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0.211 0.0685" rpy="-1.5708 -3.03858e-64 2.22045e-16"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/shutdownbutton_step_1_outside_yw1b_v4_body_step_1_solid1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_c -->
+    <visual>
+      <origin xyz="-7.90143e-17 0.4215 0.127" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_c.stl"/>
+      </geometry>
+      <material name="part_c_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-7.90143e-17 0.4215 0.127" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_c.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part ks_10x15_2 -->
+    <visual>
+      <origin xyz="-0.04675 0.1936 0.0745" rpy="-1.5708 -3.03858e-64 2.22045e-16"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/ks_10x15.stl"/>
+      </geometry>
+      <material name="ks_10x15_2_material">
+        <color rgba="0.345098 0.345098 0.345098 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.04675 0.1936 0.0745" rpy="-1.5708 -3.03858e-64 2.22045e-16"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/ks_10x15.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part food_plate_2 -->
+    <visual>
+      <origin xyz="-0.00194148 -0.000206762 0.5705" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/food_plate.stl"/>
+      </geometry>
+      <material name="food_plate_2_material">
+        <color rgba="0.741176 0.529412 0.462745 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00194148 -0.000206762 0.5705" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/food_plate.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_e -->
+    <visual>
+      <origin xyz="-0.0015 1.72051e-16 0.2095" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_e.stl"/>
+      </geometry>
+      <material name="part_e_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0015 1.72051e-16 0.2095" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_e.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part food_plate_3 -->
+    <visual>
+      <origin xyz="-0.00194148 -0.000206762 0.2905" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/food_plate.stl"/>
+      </geometry>
+      <material name="food_plate_3_material">
+        <color rgba="0.741176 0.529412 0.462745 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00194148 -0.000206762 0.2905" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/food_plate.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_x_2 -->
+    <visual>
+      <origin xyz="0.0815157 1.69302e-17 0.026" rpy="3.14159 -6.0723e-17 -1.5708"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_x.stl"/>
+      </geometry>
+      <material name="part_x_2_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0815157 1.69302e-17 0.026" rpy="3.14159 -6.0723e-17 -1.5708"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_x.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part extrusion_3 -->
+    <visual>
+      <origin xyz="-0.105 -0.104379 0.21" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/extrusion.stl"/>
+      </geometry>
+      <material name="extrusion_3_material">
+        <color rgba="0.447059 0.243137 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.105 -0.104379 0.21" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/extrusion.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part food_plate_4 -->
+    <visual>
+      <origin xyz="-0.00194148 -0.000206762 0.7105" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/food_plate.stl"/>
+      </geometry>
+      <material name="food_plate_4_material">
+        <color rgba="0.741176 0.529412 0.462745 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00194148 -0.000206762 0.7105" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/food_plate.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part extrusion_4 -->
+    <visual>
+      <origin xyz="-0.105 0.104379 0.21" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/extrusion.stl"/>
+      </geometry>
+      <material name="extrusion_4_material">
+        <color rgba="0.447059 0.243137 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.105 0.104379 0.21" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/extrusion.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_y_2 -->
+    <visual>
+      <origin xyz="0.0815157 -6.84339e-18 -0.001" rpy="0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_y.stl"/>
+      </geometry>
+      <material name="part_y_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0815157 -6.84339e-18 -0.001" rpy="0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/part_y.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part side_one -->
+    <visual>
+      <origin xyz="-0.0015 0.2085 0.569" rpy="-4.27264e-16 -3.36936e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/side_one.stl"/>
+      </geometry>
+      <material name="side_one_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0015 0.2085 0.569" rpy="-4.27264e-16 -3.36936e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/side_one.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link wheel -->
+  <link name="wheel">
+    <inertial>
+      <origin xyz="9.05134e-19 -3.56523e-06 -0.0785915" rpy="0 0 0"/>
+      <mass value="7.4004"/>
+      <inertia ixx="0.0131704" ixy="3.65553e-19" ixz="4.15399e-34" iyy="0.0131706" iyz="1.47974e-06" izz="0.0234358"/>
+    </inertial>
+    <!-- Part wheel -->
+    <visual>
+      <origin xyz="0 0 -0.056" rpy="3.14159 1.2326e-32 2.77556e-17"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/wheel.stl"/>
+      </geometry>
+      <material name="wheel_material">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.056" rpy="3.14159 1.2326e-32 2.77556e-17"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/wheel.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from part_a to wheel -->
+  <joint name="Revolute_e" type="revolute">
+    <origin xyz="-0.0815157 1.27022e-16 0.0" rpy="1.5708 1.5708 1.5708"/>
+    <parent link="part_a"/>
+    <child link="wheel"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-10.8577" upper="1.70871"/>
+  </joint>
+  <!-- Link wheel_2 -->
+  <link name="wheel_2">
+    <inertial>
+      <origin xyz="9.05134e-19 -3.56523e-06 -0.0785915" rpy="0 0 0"/>
+      <mass value="7.4004"/>
+      <inertia ixx="0.0131704" ixy="1.82392e-38" ixz="2.88869e-34" iyy="0.0131706" iyz="1.47974e-06" izz="0.0234358"/>
+    </inertial>
+    <!-- Part wheel_2 -->
+    <visual>
+      <origin xyz="0 -6.93889e-18 -0.056" rpy="-3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/wheel.stl"/>
+      </geometry>
+      <material name="wheel_2_material">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -6.93889e-18 -0.056" rpy="-3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/wheel.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from part_a to wheel_2 -->
+  <joint name="rev" type="revolute">
+    <origin xyz="0.0815157 1.64409e-17 0.0" rpy="-1.5708 1.5708 1.5708"/>
+    <parent link="part_a"/>
+    <child link="wheel_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-7.07744" upper="5.48893"/>
+  </joint>
+  <!-- Link 18a_100d_32_tpu_04 -->
+  <link name="18a_100d_32_tpu_04">
+    <inertial>
+      <origin xyz="0.00920258 3.49678e-07 -0.0143136" rpy="0 0 0"/>
+      <mass value="0.0345551"/>
+      <inertia ixx="8.39118e-06" ixy="2.59851e-10" ixz="1.26729e-06" iyy="8.79564e-06" iyz="2.74201e-11" izz="8.97912e-06"/>
+    </inertial>
+    <!-- Part 18a_100d_32_tpu_04 -->
+    <visual>
+      <origin xyz="-0.00870693 0.0125201 0.0347523" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_04.stl"/>
+      </geometry>
+      <material name="18a_100d_32_tpu_04_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00870693 0.0125201 0.0347523" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_04.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link 18a_100d_32_tpu_02 -->
+  <link name="18a_100d_32_tpu_02">
+    <inertial>
+      <origin xyz="-2.81851e-07 1.05189e-06 -0.008125" rpy="0 0 0"/>
+      <mass value="0.0261248"/>
+      <inertia ixx="5.24972e-06" ixy="8.24053e-10" ixz="-1.42383e-11" iyy="5.24686e-06" iyz="-3.816e-12" izz="9.56329e-06"/>
+    </inertial>
+    <!-- Part 18a_100d_32_tpu_02 -->
+    <visual>
+      <origin xyz="-0.0165105 -0.063056 -0.0148504" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_02.stl"/>
+      </geometry>
+      <material name="18a_100d_32_tpu_02_material">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0165105 -0.063056 -0.0148504" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_02.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from 18a_100d_32_tpu_04 to 18a_100d_32_tpu_02 -->
+  <joint name="CasterW1" type="revolute">
+    <origin xyz="0.02 0.010375 -0.034675" rpy="-1.5708 -0 0"/>
+    <parent link="18a_100d_32_tpu_04"/>
+    <child link="18a_100d_32_tpu_02"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from part_a to 18a_100d_32_tpu_04 -->
+  <joint name="Caster1" type="revolute">
+    <origin xyz="-0.105 0.148492 0.00195" rpy="0 -0 0"/>
+    <parent link="part_a"/>
+    <child link="18a_100d_32_tpu_04"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link 18a_100d_32_tpu_04_2 -->
+  <link name="18a_100d_32_tpu_04_2">
+    <inertial>
+      <origin xyz="0.00920258 3.49678e-07 -0.0143136" rpy="0 0 0"/>
+      <mass value="0.0345551"/>
+      <inertia ixx="8.39118e-06" ixy="2.59851e-10" ixz="1.26729e-06" iyy="8.79564e-06" iyz="2.74201e-11" izz="8.97912e-06"/>
+    </inertial>
+    <!-- Part 18a_100d_32_tpu_04_2 -->
+    <visual>
+      <origin xyz="-0.00870693 0.0125201 0.0347523" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_04.stl"/>
+      </geometry>
+      <material name="18a_100d_32_tpu_04_2_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00870693 0.0125201 0.0347523" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_04.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link 18a_100d_32_tpu_02_2 -->
+  <link name="18a_100d_32_tpu_02_2">
+    <inertial>
+      <origin xyz="-2.81851e-07 -1.05189e-06 -0.0051" rpy="0 0 0"/>
+      <mass value="0.0261248"/>
+      <inertia ixx="5.24972e-06" ixy="-8.24053e-10" ixz="1.42383e-11" iyy="5.24686e-06" iyz="-3.816e-12" izz="9.56329e-06"/>
+    </inertial>
+    <!-- Part 18a_100d_32_tpu_02_2 -->
+    <visual>
+      <origin xyz="-0.0165105 0.063056 0.00162536" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_02.stl"/>
+      </geometry>
+      <material name="18a_100d_32_tpu_02_2_material">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0165105 0.063056 0.00162536" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_02.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from 18a_100d_32_tpu_04_2 to 18a_100d_32_tpu_02_2 -->
+  <joint name="CasterW2" type="revolute">
+    <origin xyz="0.02 -0.005375 -0.034675" rpy="1.5708 -0.806785 0"/>
+    <parent link="18a_100d_32_tpu_04_2"/>
+    <child link="18a_100d_32_tpu_02_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from part_a to 18a_100d_32_tpu_04_2 -->
+  <joint name="Caster2" type="revolute">
+    <origin xyz="0.105 0.148492 0.00195" rpy="0 -0 0"/>
+    <parent link="part_a"/>
+    <child link="18a_100d_32_tpu_04_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link 18a_100d_32_tpu_04_3 -->
+  <link name="18a_100d_32_tpu_04_3">
+    <inertial>
+      <origin xyz="0.00920258 3.49678e-07 -0.0143136" rpy="0 0 0"/>
+      <mass value="0.0345551"/>
+      <inertia ixx="8.39118e-06" ixy="2.59851e-10" ixz="1.26729e-06" iyy="8.79564e-06" iyz="2.74201e-11" izz="8.97912e-06"/>
+    </inertial>
+    <!-- Part 18a_100d_32_tpu_04_3 -->
+    <visual>
+      <origin xyz="-0.00870693 0.0125201 0.0347523" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_04.stl"/>
+      </geometry>
+      <material name="18a_100d_32_tpu_04_3_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00870693 0.0125201 0.0347523" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_04.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link 18a_100d_32_tpu_02_3 -->
+  <link name="18a_100d_32_tpu_02_3">
+    <inertial>
+      <origin xyz="-2.81851e-07 -1.05189e-06 -0.0051" rpy="0 0 0"/>
+      <mass value="0.0261248"/>
+      <inertia ixx="5.24972e-06" ixy="-8.24053e-10" ixz="1.42383e-11" iyy="5.24686e-06" iyz="-3.816e-12" izz="9.56329e-06"/>
+    </inertial>
+    <!-- Part 18a_100d_32_tpu_02_3 -->
+    <visual>
+      <origin xyz="-0.0165105 0.063056 0.00162536" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_02.stl"/>
+      </geometry>
+      <material name="18a_100d_32_tpu_02_3_material">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0165105 0.063056 0.00162536" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_02.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from 18a_100d_32_tpu_04_3 to 18a_100d_32_tpu_02_3 -->
+  <joint name="casterW3" type="revolute">
+    <origin xyz="0.02 -0.005375 -0.034675" rpy="1.5708 -0 0"/>
+    <parent link="18a_100d_32_tpu_04_3"/>
+    <child link="18a_100d_32_tpu_02_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from part_a to 18a_100d_32_tpu_04_3 -->
+  <joint name="Caster3" type="revolute">
+    <origin xyz="-0.105 -0.148492 0.00195" rpy="0 -0 0"/>
+    <parent link="part_a"/>
+    <child link="18a_100d_32_tpu_04_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link 18a_100d_32_tpu_04_4 -->
+  <link name="18a_100d_32_tpu_04_4">
+    <inertial>
+      <origin xyz="0.00920258 3.49678e-07 -0.0143136" rpy="0 0 0"/>
+      <mass value="0.0345551"/>
+      <inertia ixx="8.39118e-06" ixy="2.59851e-10" ixz="1.26729e-06" iyy="8.79564e-06" iyz="2.74201e-11" izz="8.97912e-06"/>
+    </inertial>
+    <!-- Part 18a_100d_32_tpu_04_4 -->
+    <visual>
+      <origin xyz="-0.00870693 0.0125201 0.0347523" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_04.stl"/>
+      </geometry>
+      <material name="18a_100d_32_tpu_04_4_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00870693 0.0125201 0.0347523" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_04.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link 18a_100d_32_tpu_02_4 -->
+  <link name="18a_100d_32_tpu_02_4">
+    <inertial>
+      <origin xyz="-2.81851e-07 -1.05189e-06 -0.0051" rpy="0 0 0"/>
+      <mass value="0.0261248"/>
+      <inertia ixx="5.24972e-06" ixy="-8.24053e-10" ixz="1.42383e-11" iyy="5.24686e-06" iyz="-3.816e-12" izz="9.56329e-06"/>
+    </inertial>
+    <!-- Part 18a_100d_32_tpu_02_4 -->
+    <visual>
+      <origin xyz="-0.0165105 0.063056 0.00162536" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_02.stl"/>
+      </geometry>
+      <material name="18a_100d_32_tpu_02_4_material">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0165105 0.063056 0.00162536" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="file:///home/projx/controller/src/project-x_diffBot_controller/description/assets/18a_100d_32_tpu_02.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from 18a_100d_32_tpu_04_4 to 18a_100d_32_tpu_02_4 -->
+  <joint name="casterW4" type="revolute">
+    <origin xyz="0.02 -0.005375 -0.034675" rpy="-1.5708 1.2111 3.14159"/>
+    <parent link="18a_100d_32_tpu_04_4"/>
+    <child link="18a_100d_32_tpu_02_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from part_a to 18a_100d_32_tpu_04_4 -->
+  <joint name="Caster4" type="revolute">
+    <origin xyz="0.105 -0.148492 0.00195" rpy="0 -0 0"/>
+    <parent link="part_a"/>
+    <child link="18a_100d_32_tpu_04_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+</robot>
